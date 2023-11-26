@@ -6,9 +6,9 @@ package todo.spring.app;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class AppTest {
+public class TodoAppTest {
     @Test public void appHasAGreeting() {
-        App classUnderTest = new App();
+        TodoApp classUnderTest = new TodoApp();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 }
