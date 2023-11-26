@@ -8,7 +8,18 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    
+    // Custom plugins
+    id 'org.springframework.boot' version '2.5.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
+
+group = 'todo.spring.app'
+version = '0.0.1-SNAPSHOT'  // "SNAPSHOT" is convention for versions still in development
+
+// Set the Java version for compilation and bytecode generation
+sourceCompatibility = '20'
+targetCompatibility = '20'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -21,6 +32,11 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:32.1.1-jre'
+
+    // Custom dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:3.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.0'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -32,5 +48,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'todo.spring.app.App'
+    mainClass = 'todo.spring.app.TodoApplication'
 }
